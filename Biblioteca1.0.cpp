@@ -56,7 +56,7 @@
 			cin >> n;
 		
 		    
-		for (int i =0; i< estudiantes.size();i++){
+		for (size_t i =0; i < estudiantes.size();i++){
 			
 				if (n == estudiantes[i]){
 
