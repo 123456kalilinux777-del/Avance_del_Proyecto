@@ -5,7 +5,7 @@
     using namespace std;
 
     int main (){
-
+        //aqui estoy definiendo los elementos de la biblioteca
         string recontrasena[6];
         string contrasena[6]={"1","2","3","4","5","6"};
         vector <string> estudiantes={"felipe","luciana","fernando","brenda"};
@@ -15,26 +15,22 @@
         string libros_DE[5] ={"derecho romano","constitucion politica del estado","derecho tributario boliviano","derecho penal boliviano","derecho de las familias"};
         string libros_ME[5] ={"atlas de la anatomia","medicina familiar","inteligencia artificial y medicina","medicina interna","anatomia humana"};
         string libros_AD[5] ={"administracion de empresas","el arte de dirigir empresas","psicologia del dinero","la gerencia y la empresa","organizacion de empresas"};
+        string codigos_IS;
+        string codigos_DE;
+        string codigos_ME;
+        string codigos_AD;
         string n,n2,n3; 
 		
-        cout << "       ****************BIBLIOTECA_UPDS****************"<<endl;
+        cout << "        ****************BIBLIOTECA_UPDS****************"<<endl;
 		
 		// AQUI SE INGRESAR LA CONTRASEÑA QUE ES:123456
 		
-       cout << "   Ingrese su contrasena: "<<endl;
-         
             int contador=0;
+            int u=0,intentos=3;
 
-    
-            
-
-            int u=0,aa=3;
-                    do
-                    {
-                
-                         
-                        aa--;
-                 
+                    do{
+                        intentos--;
+            cout << "   Ingrese su contrasena: "<<endl;
             for (int a = 0; a < 6; a++){
 
             cin >> recontrasena[a];
@@ -57,18 +53,15 @@
             }else{
 
                 cout<< "Contraseña incorrecta"<<endl;
-                cout<< "Tiene "<<aa<<" intentos";
-                //return 0;
+        
             }
-                if (aa!=0)
-                {
-                 cout<<"Tienes "<<aa<< " de oportunidades"<<endl;
-                }
-                    if (aa==0){
+            if (intentos!=0){
+                 cout<<"Tienes "<<intentos<< " de oportunidades"<<endl;
+                }if (intentos==0){
                             cout << "Bloqueado";
                             return 0;
                         }
-                    } while (aa>u);    
+                    } while (intentos>u);    
                     
                 
         //para verificar si existe el estudiante o no, para verificar LA CARRERA Y SU CEDULA DE IDENTIDAD 
@@ -113,8 +106,7 @@
 			
 		}
 		
-		cout<<"continuando......."<<endl;
-		
+		cout<<"continuando......."<<endl; 
 		return 0;
 		
 	}
