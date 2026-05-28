@@ -1,5 +1,6 @@
 #include <iostream>
 #include <vector>
+#include <string>
 
     using namespace std;
 
@@ -10,13 +11,15 @@
         vector <string> estudiantes={"felipe","luciana","fernando","brenda"};
         vector <string> carrera = {"ingenieria de sistemas","derecho","administracion de empresas","medicina"};
         vector <string> ci= {"12931417","13941713","13941413","13942815"};
-		string n; 
+		string n,n2,n3; 
 		
         cout << "       ****************BIBLIOTECA_UPDS****************"<<endl;
-
-        cout << "   Ingrese su contrasena: "<<endl;
+		
+		// AQUI SE INGRESAR LA CONTRASEÑA QUE ES:123456
+		
+       cout << "   Ingrese su contrasena: "<<endl;
          
-            bool aprobado=false;
+            int contador=0;
 
         for (int a = 0; a < 6; a++){
 
@@ -26,39 +29,53 @@
 
         for (int a = 0; a < 6; a++){
         
-        if (contrasena[a]==recontrasena[a]){
-            aprobado=true;
-            break;
-        }
+        	if (contrasena[a]==recontrasena[a]){
+           
+            contador=contador+1;
+		
+        	}	
             
-                    }
-                    
-                        
-            if (aprobado==false){
+        }
+                                    
+            if (contador ==6){
 
-                cout << "bloqueado";
-                    return 0;
+                cout << "desbloqueado";
+				
             }else{
 
-                cout<< "desbloqueado"<<endl;
+                cout<< "Bloqueado"<<endl;
+                return 0;
 
             }
                     
                     
-
-                        
-        //para verificar si existe el estudiante o no
+                
+        //para verificar si existe el estudiante o no, para verificar LA CARRERA Y SU CEDULA DE IDENTIDAD 
+    	
     	
 		bool bandera=false;
-		//Ingresando el nombre...........
-    	
-		cout << "\nPor favor ingrese el registro de el estudiante?";
-			cin >> n;
+		
+    	//Ingresando nombre.......
+		cout << "Por favor ingrese el nombre del estudiante: ";
+			cin>>n;
+				cin.ignore();
+				
+		//Ingresando carrera.......		
+				cout << "Por favor ingrese la carrera: ";
+		getline (cin , n2);
+				//cin.ignore();
+		
+		//Ingresando cedula de identidad.......		
+					cout << "Por favor ingrese la su cedula de identidad: ";
+		getline (cin , n3);
 		
 		    
-		for (size_t i =0; i < estudiantes.size();i++){
+		    //VERIFICANDO NOMBRE, CARRERA, CEDULA DE IDENTIDAD. TODOS ESTOS DEBEN DE COINCIDIR CON EL NUMERO DE POSICION EN EL ARREGLO.
+		    
+		    
+		for (size_t i =0; i< estudiantes.size()&&carrera.size()&&ci.size();i++){
 			
-				if (n == estudiantes[i]){
+				if (n == estudiantes[i]&&n2==carrera[i]&&n3==ci[i]){
 
                 bandera=true;
                 break;
@@ -67,23 +84,16 @@
 		}
         if (bandera==false){
 
-        
                 cout << "No Esta registrado en la base de datos"<<endl;            
 
         }else{
-        cout << "esta registrado en la base de datos"<<endl;
-        }
-
-		return 0;
-	}
-	
-	
-	/*
-		for (int i = 0; i<n; i++){
-			
-			cout << "Elemento"<<i<<"]: ";
-			cin >> valor;
-			numeros.push_back(valor);			
+        
+			cout << "Esta registrado en la base de datos"<<endl;
 			
 		}
-		*/
+		
+		cout<<"continuando......."<<endl;
+		
+		return 0;
+		
+	}
