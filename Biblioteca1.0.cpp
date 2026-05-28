@@ -37,7 +37,7 @@
             if (aprobado==false){
 
                 cout << "bloqueado";
-
+                    return 0;
             }else{
 
                 cout<< "desbloqueado"<<endl;
@@ -70,9 +70,9 @@
         
                 cout << "No Esta registrado en la base de datos"<<endl;            
 
-        }
+        }else{
         cout << "esta registrado en la base de datos"<<endl;
-		
+        }
 
 		return 0;
 	}
