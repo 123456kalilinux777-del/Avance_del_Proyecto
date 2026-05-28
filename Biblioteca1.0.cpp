@@ -11,7 +11,11 @@
         vector <string> estudiantes={"felipe","luciana","fernando","brenda"};
         vector <string> carrera = {"ingenieria de sistemas","derecho","administracion de empresas","medicina"};
         vector <string> ci= {"12931417","13941713","13941413","13942815"};
-		string n,n2,n3; 
+        string libros_IS[5] = {"codigo limpio","python al descubierto","fundamentos de programacion","Elprogramador pragmatico","logica de programacion orientada a objetos"};
+        string libros_DE[5] ={"derecho romano","constitucion politica del estado","derecho tributario boliviano","derecho penal boliviano","derecho de las familias"};
+        string libros_ME[5] ={"atlas de la anatomia","medicina familiar","inteligencia artificial y medicina","medicina interna","anatomia humana"};
+        string libros_AD[5] ={"administracion de empresas","el arte de dirigir empresas","psicologia del dinero","la gerencia y la empresa","organizacion de empresas"};
+        string n,n2,n3; 
 		
         cout << "       ****************BIBLIOTECA_UPDS****************"<<endl;
 		
@@ -21,12 +25,21 @@
          
             int contador=0;
 
-        for (int a = 0; a < 6; a++){
+    
+            
+
+            int u=0,aa=3;
+                    do
+                    {
+                
+                         
+                        aa--;
+                 
+            for (int a = 0; a < 6; a++){
 
             cin >> recontrasena[a];
             
-        }
-
+            }
         for (int a = 0; a < 6; a++){
         
         	if (contrasena[a]==recontrasena[a]){
@@ -36,18 +49,26 @@
         	}	
             
         }
-                                    
+                           
             if (contador ==6){
 
                 cout << "desbloqueado";
-				
+				break;
             }else{
 
-                cout<< "Bloqueado"<<endl;
-                return 0;
-
+                cout<< "Contraseña incorrecta"<<endl;
+                cout<< "Tiene "<<aa<<" intentos";
+                //return 0;
             }
-                    
+                if (aa!=0)
+                {
+                 cout<<"Tienes "<<aa<< " de oportunidades"<<endl;
+                }
+                    if (aa==0){
+                            cout << "Bloqueado";
+                            return 0;
+                        }
+                    } while (aa>u);    
                     
                 
         //para verificar si existe el estudiante o no, para verificar LA CARRERA Y SU CEDULA DE IDENTIDAD 
@@ -61,7 +82,7 @@
 				cin.ignore();
 				
 		//Ingresando carrera.......		
-				cout << "Por favor ingrese la carrera: ";
+				cout << "\nPor favor ingrese la carrera: ";
 		getline (cin , n2);
 				//cin.ignore();
 		
